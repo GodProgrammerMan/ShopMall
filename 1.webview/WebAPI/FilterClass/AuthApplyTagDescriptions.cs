@@ -12,7 +12,7 @@ namespace WebAPI.FilterClass
         public void Apply(SwaggerDocument swaggerDoc, DocumentFilterContext context)
         {
             swaggerDoc.Tags = new List<Tag>
-            {
+            {  
                 new Tag{ Name="ShopMall WebApi",Description="ShopMall 服务接口"},
             };
         }
