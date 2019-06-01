@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebAPI.FilterClass
+namespace WebAPI.FilterClass  
 {
     public class AuthApplyTagDescriptions: IDocumentFilter
     {
