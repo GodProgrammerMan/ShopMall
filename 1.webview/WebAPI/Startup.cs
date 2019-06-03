@@ -12,18 +12,41 @@ using WebAPI.FilterClass;
 
 namespace WebAPI
 {
+    /// <summary>
+    /// 程序启动
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// 跨域自定义名
+        /// </summary>
         public const string CorsName = "WebApiCors";
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
+        /// <summary>
+        /// 定义配置
+        /// </summary>
         public IConfiguration Configuration { get; }
 
+        /// <summary>
+        /// 获取目录
+        /// </summary>
+        public string basePath = PlatformServices.Default.Application.ApplicationBasePath;
+
+        /// <summary>
+        /// 启动类构造，方便初始化所需对象
+        /// </summary>
+        /// <param name="configuration"></param>
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;//初始化配置
+        }
+
+        /// <summary>
+        /// 注入服务
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddMvcCore(option =>
             {
                 option.Filters.Add(new TestAuthorizationFilter());
@@ -51,13 +74,17 @@ namespace WebAPI
                     Version = "v1",
                     Title = "ShoppingMall API"
                 });
-                //Determine base path for the application.  
-                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+ 
                 var xmlPath = Path.Combine(basePath, "WebAPI.xml");
                 options.IncludeXmlComments(xmlPath);
             });
         }
 
+        /// <summary>
+        /// 注入中间管道
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -77,12 +104,14 @@ namespace WebAPI
 
             app.UseMvc();
 
+            app.UseStaticFiles();
             app.UseSwagger();
-            app.UseSwaggerUI(c =>
+            app.UseSwaggerUI(c => 
             {
-                c.InjectJavascript("/zh_CN.js"); // 加载中文包
+                var _swahherjs = Path.Combine(basePath, "zh_CN.js");
+                c.InjectJavascript("/js/zh_CN.js"); // 加载中文包
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShoppingMall V1");
-            });
+            }); 
 
         }
     }

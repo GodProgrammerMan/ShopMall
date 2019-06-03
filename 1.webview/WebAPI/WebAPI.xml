@@ -28,5 +28,44 @@
             </summary>
             <param name="value"></param>
         </member>
+        <member name="T:WebAPI.Startup">
+            <summary>
+            程序启动
+            </summary>
+        </member>
+        <member name="F:WebAPI.Startup.CorsName">
+            <summary>
+            跨域自定义名
+            </summary>
+        </member>
+        <member name="P:WebAPI.Startup.Configuration">
+            <summary>
+            定义配置
+            </summary>
+        </member>
+        <member name="F:WebAPI.Startup.basePath">
+            <summary>
+            获取目录
+            </summary>
+        </member>
+        <member name="M:WebAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            启动类构造，方便初始化所需对象
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:WebAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            注入服务
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:WebAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            注入中间管道
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
     </members>
 </doc>
