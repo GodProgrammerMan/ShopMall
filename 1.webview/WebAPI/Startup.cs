@@ -56,7 +56,7 @@ namespace WebAPI
             services.AddCors(op => { op.AddPolicy(CorsName, set => { set.SetIsOriginAllowed(origin => true).AllowAnyHeader().AllowAnyMethod().AllowCredentials(); }); });
 
             services.AddAuthentication("Bearer")
-                .AddIdentityServerAuthentication(options =>
+                .AddIdentityServerAuthentication(options =>  
                 {
                     options.Authority = "http://lzxidentityserver.com/";
                     options.RequireHttpsMetadata = false;
