@@ -25,7 +25,7 @@ namespace WebAPI
         /// 定义配置
         /// </summary>
         public IConfiguration Configuration { get; }
-
+        public string s;
         /// <summary>
         /// 获取目录
         /// </summary>
