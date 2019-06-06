@@ -53,6 +53,9 @@ namespace ShopMall.FrameWork.Entity
 	{
 	//将全部字段遍历出来
 <# foreach(DbColumn column in DbHelper.GetDbColumns(config.ConnectionString, config.DbDatabase, config.TableName)){#>
+	  /// <summary>
+	  /// <#=column.Remark#>
+      /// </summary>	
 	  public <#= column.CSharpType#><# if(column.CommonType.IsValueType && column.IsNullable){#>?<#}#> <#=column.ColumnName#> { get; set; }
 <#}#> 
     }
@@ -89,7 +92,9 @@ namespace ShopMall.FrameWork.Entity
 	{
 	//将该表下的字段都遍历出来，可以自定义获取数据描述等信息
 <# foreach(DbColumn column in DbHelper.GetDbColumns(config.ConnectionString, config.DbDatabase, row["TABLE_NAME"].ToString() )){ #>
-
+	  /// <summary>
+	  /// <#=column.Remark#>
+      /// </summary>	
 	  public <#= column.CSharpType#> <# if(column.CommonType.IsValueType && column.IsNullable){#> ?<#}#> <#=column.ColumnName #> { get; set; }
 <#}#> 
 

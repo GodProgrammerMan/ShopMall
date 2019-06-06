@@ -11,16 +11,24 @@ namespace ShopMall.FrameWork.Entity
 	{
 	//将该表下的字段都遍历出来，可以自定义获取数据描述等信息
 
-
+	  /// <summary>
+	  /// 
+      /// </summary>	
 	  public int  id { get; set; }
 
-
+	  /// <summary>
+	  /// 广告ID
+      /// </summary>	
 	  public int  advID { get; set; }
 
-
+	  /// <summary>
+	  /// 图片路径
+      /// </summary>	
 	  public string  imgUrl { get; set; }
 
-
+	  /// <summary>
+	  /// 排序
+      /// </summary>	
 	  public int  sort { get; set; }
  
 

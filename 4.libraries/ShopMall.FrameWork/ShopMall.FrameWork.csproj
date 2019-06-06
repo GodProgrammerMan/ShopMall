@@ -15,12 +15,15 @@
     </None>
     <None Update="ShopMall.FrameWork.IServices\ShopMall.FrameWork.IServices.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ShopMall.FrameWork.IServices.cs</LastGenOutput>
     </None>
     <None Update="ShopMall.FrameWork.Repository\ShopMall.FrameWork.Repository.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ShopMall.FrameWork.Repository.cs</LastGenOutput>
     </None>
     <None Update="ShopMall.FrameWork.Services\ShopMall.FrameWork.Services.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ShopMall.FrameWork.Services.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -38,6 +41,21 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ShopMall.FrameWork.IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Update="ShopMall.FrameWork.IServices\ShopMall.FrameWork.IServices.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ShopMall.FrameWork.IServices.tt</DependentUpon>
+    </Compile>
+    <Compile Update="ShopMall.FrameWork.Repository\ShopMall.FrameWork.Repository.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ShopMall.FrameWork.Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Update="ShopMall.FrameWork.Services\ShopMall.FrameWork.Services.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ShopMall.FrameWork.Services.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 

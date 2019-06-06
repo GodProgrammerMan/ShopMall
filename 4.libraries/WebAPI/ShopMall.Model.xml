@@ -1,0 +1,1192 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ShopMall.Model</name>
+    </assembly>
+    <members>
+        <member name="T:ShopMall.Model.MessageModel`1">
+            <summary>
+            通用返回信息类
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.MessageModel`1.success">
+            <summary>
+            操作是否成功
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.MessageModel`1.msg">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.MessageModel`1.response">
+            <summary>
+            返回数据集合
+            </summary>
+        </member>
+        <member name="T:ShopMall.Model.Models.province_city_county">
+            <summary>
+            province_city_county
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.province_city_county.id">
+            <summary>
+            表id
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.province_city_county.name">
+            <summary>
+            名称
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.province_city_county.pid">
+            <summary>
+            父级ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.province_city_county.ptype">
+            <summary>
+            1表示省，2表示市，3表示县
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.province_city_county.code">
+            <summary>
+            编码
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.province_city_county.status">
+            <summary>
+            状态，默认为1
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.province_city_county.createTime">
+            <summary>
+            创建日期
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.province_city_county.updateTime">
+            <summary>
+            更改日期
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_address">
+            <summary>
+            Shop_address
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_address.id">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_address.csName">
+            <summary>
+            收货人
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_address.csMobilePhone">
+            <summary>
+            收货人
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_address.provinceID">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_address.cityID">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_address.areaID">
+            <summary>
+            区县ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_address.detail">
+            <summary>
+            详细街道
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_address.sort">
+            <summary>
+            排序
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_address.isDefault">
+            <summary>
+            是否为默认
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_advertisement">
+            <summary>
+            Shop_advertisement
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_advertisement.id">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_advertisement.spid">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_advertisement.advName">
+            <summary>
+            广告标题
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_advertisement.positionNo">
+            <summary>
+            位置编号（如：移动端mobile_index_位置，pc端PC_index_位置）
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_advertisement.expirationDate">
+            <summary>
+            到期时间
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_advertisement.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_advertisement.sort">
+            <summary>
+            排序
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_advertisement.price">
+            <summary>
+            价格
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_advertisement_img">
+            <summary>
+            Shop_advertisement_img
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_advertisement_img.id">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_advertisement_img.advID">
+            <summary>
+            广告ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_advertisement_img.imgUrl">
+            <summary>
+            图片路径
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_advertisement_img.sort">
+            <summary>
+            排序
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_brand">
+            <summary>
+            Shop_brand
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_brand.id">
+            <summary>
+            表id
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_brand.bpName">
+            <summary>
+            品牌名称
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_brand.sort">
+            <summary>
+            排序
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_brand.classID">
+            <summary>
+            只存一级分类
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_brand.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_brand.isDel">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_collection">
+            <summary>
+            Shop_collection
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_collection.id">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_collection.spid">
+            <summary>
+            商品id
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_collection.uid">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_collection.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_order">
+            <summary>
+            Shop_order
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_order.orderID">
+            <summary>
+            订单ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_order.orderNo">
+            <summary>
+            订单号
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_order.thirdOrderNo">
+            <summary>
+            第三方订单号
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_order.mobilePhone">
+            <summary>
+            手机
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_order.addressID">
+            <summary>
+            地址ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_order.uid">
+            <summary>
+            用户ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_order.totalPrice">
+            <summary>
+            订单总金额
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_order.remarks">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_order.expirationDate">
+            <summary>
+            过期时间
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_order.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_order.OrderStatus">
+            <summary>
+            订单状态（0-订单已关闭，1-可用）
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_order.PayStatus">
+            <summary>
+            是否支付
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_order.payType">
+            <summary>
+            类型（1-支付宝，2-微信，3-银行）
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_orderItem">
+            <summary>
+            Shop_orderItem
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_orderItem.orderItemID">
+            <summary>
+            子订单表
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_orderItem.spid">
+            <summary>
+            商品ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_orderItem.skuid">
+            <summary>
+            skuID对应sku表
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_orderItem.orderID">
+            <summary>
+            订单ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_orderItem.number">
+            <summary>
+            购买数量
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_orderItem.price">
+            <summary>
+            价格
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_orderItem.fhDate">
+            <summary>
+            发货时间
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_orderItem.remake">
+            <summary>
+            备注
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_orderItem.state">
+            <summary>
+            0-待发货，1-待收货，2-待评价，3-交易成功
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_refund">
+            <summary>
+            Shop_refund
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_refund.id">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_refund.uid">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_refund.refundNo">
+            <summary>
+            退款编号
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_refund.orderNo">
+            <summary>
+            订单号
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_refund.state">
+            <summary>
+            状态（0-正在申请，1申请通过，2申请不通过）
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_refund.refundMsg">
+            <summary>
+            退款理由
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_refund.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_shopCar">
+            <summary>
+            Shop_shopCar
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_shopCar.id">
+            <summary>
+            购物车表id
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_shopCar.uid">
+            <summary>
+            用户id
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_shopCar.skuid">
+            <summary>
+            对应表skuid
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_shopCar.Number">
+            <summary>
+            数量
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_shopCar.Price">
+            <summary>
+            价格
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_shopCar.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_sku">
+            <summary>
+            Shop_sku
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sku.skuID">
+            <summary>
+            表id
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sku.spid">
+            <summary>
+            商品ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sku.spfvIDs">
+            <summary>
+            规格值，ids
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sku.spfvStr">
+            <summary>
+            对应属性值字符串
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sku.skuImg">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sku.price">
+            <summary>
+            价格
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sku.stock">
+            <summary>
+            库存
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sku.skuState">
+            <summary>
+            sku状态，（1正常，0下架）
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sku.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_spf">
+            <summary>
+            Shop_spf
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spf.spfID">
+            <summary>
+            表id
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spf.classID">
+            <summary>
+            分类ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spf.spfName">
+            <summary>
+            规格名称
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spf.sort">
+            <summary>
+            排序
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spf.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_spfv">
+            <summary>
+            Shop_spfv
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spfv.spfvID">
+            <summary>
+            表id
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spfv.spfValue">
+            <summary>
+            规格值
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spfv.spfID">
+            <summary>
+            对应规格表ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spfv.sort">
+            <summary>
+            排序
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spfv.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_spu">
+            <summary>
+            Shop_spu
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu.spid">
+            <summary>
+            商品ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu.spName">
+            <summary>
+            商品名称
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu.classIDs">
+            <summary>
+            轨迹，对应所在分类的轨迹
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu.ClassID">
+            <summary>
+            商品分类id，
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu.bpid">
+            <summary>
+            品牌ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu.vagPrice">
+            <summary>
+            平均价格
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu.shopid">
+            <summary>
+            店铺ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu.cover">
+            <summary>
+            封面
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu.sort">
+            <summary>
+            排序
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu.saleState">
+            <summary>
+            状态（1正常，0下架）
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu.salesNumber">
+            <summary>
+            销量
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu.views">
+            <summary>
+            浏览量
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_spu_evaluate">
+            <summary>
+            Shop_spu_evaluate
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate.id">
+            <summary>
+            表id
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate.spid">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate.skuid">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate.spStar">
+            <summary>
+            商品星级
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate.spevaluate">
+            <summary>
+            商品评价
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate.shopWl">
+            <summary>
+            物流星级评价
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate.anonymous">
+            <summary>
+            是否匿名
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate.shopFw">
+            <summary>
+            商品服务星级评价
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_spu_evaluate_img">
+            <summary>
+            Shop_spu_evaluate_img
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate_img.id">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate_img.evaluateID">
+            <summary>
+            评价ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate_img.img">
+            <summary>
+            图片路径
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_spu_evaluate_reply">
+            <summary>
+            Shop_spu_evaluate_reply
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate_reply.id">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate_reply.evaluateID">
+            <summary>
+            评价ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate_reply.econtent">
+            <summary>
+            回复img
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate_reply.replyuid">
+            <summary>
+            回复人uid
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate_reply.coveruid">
+            <summary>
+            被回复人
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_spu_evaluate_reply.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_sp_class">
+            <summary>
+            Shop_sp_class
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sp_class.id">
+            <summary>
+            表ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sp_class.className">
+            <summary>
+            分类名称
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sp_class.idList">
+            <summary>
+            轨迹，包括父级id
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sp_class.fid">
+            <summary>
+            父级分类
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sp_class.sort">
+            <summary>
+            排序
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sp_class.IsDelete">
+            <summary>
+            是否删除
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sp_class.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_sys_user">
+            <summary>
+            Shop_sys_user
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.uid">
+            <summary>
+            用户ID，即表ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.headPortrait">
+            <summary>
+            头像
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.loginName">
+            <summary>
+            登录账号（一般为手机号码，或者邮箱账号）
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.passkey">
+            <summary>
+            密码随机生成的key
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.passValue">
+            <summary>
+            随机生成的key+密码=passVuale
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.nickName">
+            <summary>
+            昵称
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.realName">
+            <summary>
+            真实姓名
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.sex">
+            <summary>
+            1-男，2-女
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.uStatus">
+            <summary>
+            用户状态（默认为1，激活，0-禁用）
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.Mobile">
+            <summary>
+            手机号
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.Email">
+            <summary>
+            邮箱
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.LoginNum">
+            <summary>
+            登录次数
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.LastLogin">
+            <summary>
+            最近登录时间
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.wx_openid">
+            <summary>
+            微信openid
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.qq_code">
+            <summary>
+            qq快捷登录
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.birthday">
+            <summary>
+            生日
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_sys_user.regRemarks">
+            <summary>
+            注册备注
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_transaction">
+            <summary>
+            Shop_transaction
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_transaction.id">
+            <summary>
+            表ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_transaction.transactionNo">
+            <summary>
+            流水号
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_transaction.orderNo">
+            <summary>
+            订单号对应交易号
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_transaction.thirdOrderNo">
+            <summary>
+            第三方订单号
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_transaction.payAccount">
+            <summary>
+            付款方账号
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_transaction.incomeAccount">
+            <summary>
+            收入方账号
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_transaction.payType">
+            <summary>
+            类型（1-支付宝，2-微信，3-银行）
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_transaction.transactionMsg">
+            <summary>
+            流水信息
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_transaction.transactionType">
+            <summary>
+            流水类型（1-支出，2-收入）
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_transaction.uid">
+            <summary>
+            用户ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_transaction.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_user_shop">
+            <summary>
+            Shop_user_shop
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_user_shop.shopid">
+            <summary>
+            店铺ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_user_shop.shopName">
+            <summary>
+            店铺名称
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_user_shop.uid">
+            <summary>
+            用户表id
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_user_shop.shopTelephone">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_user_shop.shopState">
+            <summary>
+            店铺状态（1正常，0-下架）
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_user_shop.sort">
+            <summary>
+            排序
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_user_shop.creatTime">
+            <summary>
+            注册时间
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_user_shop.shopLogo">
+            <summary>
+            店铺logo
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_user_shop.remarks">
+            <summary>
+            备注
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.MyContext.ConnectionString">
+            <summary>
+            连接字符串 
+            Blog.Core
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.Models.MyContext.DbType">
+            <summary>
+            数据库类型 
+            Blog.Core 
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.Models.MyContext.Db">
+            <summary>
+            数据连接对象 
+            Blog.Core 
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.Models.MyContext.Context">
+            <summary>
+            数据库上下文实例（自动关闭连接）
+            Blog.Core 
+            </summary>
+        </member>
+        <member name="M:ShopMall.Model.Models.MyContext.#ctor">
+            <summary>
+            功能描述:构造函数
+            作　　者:Blog.Core
+            </summary>
+        </member>
+        <member name="M:ShopMall.Model.Models.MyContext.GetEntityDB``1">
+            <summary>
+            功能描述:获取数据库处理对象
+            作　　者:Blog.Core
+            </summary>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:ShopMall.Model.Models.MyContext.GetEntityDB``1(SqlSugar.SqlSugarClient)">
+            <summary>
+            功能描述:获取数据库处理对象
+            作　　者:Blog.Core
+            </summary>
+            <param name="db">db</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:ShopMall.Model.Models.MyContext.CreateClassFileByDBTalbe(System.String)">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Blog.Core
+            </summary>       
+            <param name="strPath">实体类存放路径</param>
+        </member>
+        <member name="M:ShopMall.Model.Models.MyContext.CreateClassFileByDBTalbe(System.String,System.String)">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Blog.Core
+            </summary>
+            <param name="strPath">实体类存放路径</param>
+            <param name="strNameSpace">命名空间</param>
+        </member>
+        <member name="M:ShopMall.Model.Models.MyContext.CreateClassFileByDBTalbe(System.String,System.String,System.String[])">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Blog.Core
+            </summary>
+            <param name="strPath">实体类存放路径</param>
+            <param name="strNameSpace">命名空间</param>
+            <param name="lstTableNames">生产指定的表</param>
+        </member>
+        <member name="M:ShopMall.Model.Models.MyContext.CreateClassFileByDBTalbe(System.String,System.String,System.String[],System.String,System.Boolean)">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Blog.Core
+            </summary>
+            <param name="strPath">实体类存放路径</param>
+            <param name="strNameSpace">命名空间</param>
+            <param name="lstTableNames">生产指定的表</param>
+            <param name="strInterface">实现接口</param>
+            <param name="blnSerializable">是否序列化</param>
+        </member>
+        <member name="M:ShopMall.Model.Models.MyContext.CreateTableByEntity``1(System.Boolean,``0[])">
+            <summary>
+            功能描述:根据实体类生成数据库表
+            作　　者:Blog.Core
+            </summary>
+            <param name="blnBackupTable">是否备份表</param>
+            <param name="lstEntitys">指定的实体</param>
+        </member>
+        <member name="M:ShopMall.Model.Models.MyContext.CreateTableByEntity(System.Boolean,System.Type[])">
+            <summary>
+            功能描述:根据实体类生成数据库表
+            作　　者:Blog.Core
+            </summary>
+            <param name="blnBackupTable">是否备份表</param>
+            <param name="lstEntitys">指定的实体</param>
+        </member>
+        <member name="M:ShopMall.Model.Models.MyContext.GetDbContext">
+            <summary>
+            功能描述:获得一个DbContext
+            作　　者:Blog.Core
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ShopMall.Model.Models.MyContext.Init(System.String,SqlSugar.DbType)">
+            <summary>
+            功能描述:设置初始化参数
+            作　　者:Blog.Core
+            </summary>
+            <param name="strConnectionString">连接字符串</param>
+            <param name="enmDbType">数据库类型</param>
+        </member>
+        <member name="M:ShopMall.Model.Models.MyContext.GetConnectionConfig(System.Boolean,System.Boolean)">
+            <summary>
+            功能描述:创建一个链接配置
+            作　　者:Blog.Core
+            </summary>
+            <param name="blnIsAutoCloseConnection">是否自动关闭连接</param>
+            <param name="blnIsShardSameThread">是否夸类事务</param>
+            <returns>ConnectionConfig</returns>
+        </member>
+        <member name="M:ShopMall.Model.Models.MyContext.GetCustomDB(SqlSugar.ConnectionConfig)">
+            <summary>
+            功能描述:获取一个自定义的DB
+            作　　者:Blog.Core
+            </summary>
+            <param name="config">config</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:ShopMall.Model.Models.MyContext.GetCustomEntityDB``1(SqlSugar.SqlSugarClient)">
+            <summary>
+            功能描述:获取一个自定义的数据库处理对象
+            作　　者:Blog.Core
+            </summary>
+            <param name="sugarClient">sugarClient</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:ShopMall.Model.Models.MyContext.GetCustomEntityDB``1(SqlSugar.ConnectionConfig)">
+            <summary>
+            功能描述:获取一个自定义的数据库处理对象
+            作　　者:Blog.Core
+            </summary>
+            <param name="config">config</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="T:ShopMall.Model.PageModel`1">
+            <summary>
+            通用分页信息类
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.PageModel`1.page">
+            <summary>
+            当前页标
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.PageModel`1.pageCount">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.PageModel`1.dataCount">
+            <summary>
+            数据总数
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.PageModel`1.PageSize">
+            <summary>
+            每页大小
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.PageModel`1.data">
+            <summary>
+            返回数据
+            </summary>
+        </member>
+        <member name="F:ShopMall.Model.ResponseEnum.NoPermissions">
+            <summary>
+            无权限
+            </summary>
+        </member>
+        <member name="F:ShopMall.Model.ResponseEnum.NoFound">
+            <summary>
+            找不到指定资源
+            </summary>
+        </member>
+        <member name="F:ShopMall.Model.ResponseEnum.ServerError">
+            <summary>
+            找不到指定资源
+            </summary>
+        </member>
+        <member name="T:ShopMall.Model.TableModel`1">
+            <summary>
+            表格数据，支持分页
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.TableModel`1.Code">
+            <summary>
+            返回编码
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.TableModel`1.Msg">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.TableModel`1.Count">
+            <summary>
+            记录总数
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.TableModel`1.Data">
+            <summary>
+            返回数据集
+            </summary>
+        </member>
+    </members>
+</doc>
