@@ -1,4 +1,5 @@
 ﻿using IdentityServer4.AccessTokenValidation;
+using log4net.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +31,10 @@ namespace WebAPI
         /// </summary>
         public string basePath = PlatformServices.Default.Application.ApplicationBasePath;
 
+        /// <summary>
+        /// log4net 仓储库
+        /// </summary>
+        public static ILoggerRepository repository { get; set; }
         /// <summary>
         /// 启动类构造，方便初始化所需对象
         /// </summary>
