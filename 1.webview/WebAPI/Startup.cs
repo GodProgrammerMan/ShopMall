@@ -134,7 +134,7 @@ namespace WebAPI
                             Title = $"{webapiName} 接口文档",
                             Description = $"{webapiName} HTTP API " + version,
                             TermsOfService = "None",
-                            Contact = new Contact { Name = "webapi", Email = "960842214@qq.com", Url = "https://imlzx.cn" }
+                           // Contact = new Contact { Name = "webapi", Email = "960842214@qq.com", Url = "https://imlzx.cn" }
                         });
                         options.OrderActionsBy(o => o.RelativePath);
                     });
@@ -159,7 +159,7 @@ namespace WebAPI
                 // 全局权限过滤【无效】
                 //o.Filters.Add(typeof(MyAuthorizeFilter));
                 // 全局路由权限公约
-                o.Conventions.Insert(0, new GlobalRouteAuthorizeConvention());
+                //o.Conventions.Insert(0, new GlobalRouteAuthorizeConvention());
             })
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
             // 取消默认驼峰
@@ -227,7 +227,7 @@ namespace WebAPI
                           .InterceptedBy(cacheType.ToArray());//允许将拦截器服务的列表分配给注册。 
                 #endregion
 
-                #region Repository.dll 注入，有对应接口
+            #region Repository.dll 注入，有对应接口
                 var repositoryDllFile = Path.Combine(basePath, "ShopMall.Repository.dll");
                 var assemblysRepository = Assembly.LoadFrom(repositoryDllFile);
                 builder.RegisterAssemblyTypes(assemblysRepository).AsImplementedInterfaces();
@@ -303,7 +303,7 @@ namespace WebAPI
                     c.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"{webapiName} {version}");
                 });
                 // 将swagger首页，设置成我们自定义的页面，记得这个字符串的写法：解决方案名.index.html
-                c.IndexStream = () => GetType().GetTypeInfo().Assembly.GetManifestResourceStream("ShoppingMall.index.html");//这里是配合MiniProfiler进行性能监控的，《文章：完美基于AOP的接口性能分析》，如果你不需要，可以暂时先注释掉，不影响大局。
+               // c.IndexStream = () => GetType().GetTypeInfo().Assembly.GetManifestResourceStream("ShoppingMall.index.html");//这里是配合MiniProfiler进行性能监控的，《文章：完美基于AOP的接口性能分析》，如果你不需要，可以暂时先注释掉，不影响大局。
                 c.RoutePrefix = ""; //路径配置，设置为空，表示直接在根域名（localhost:8001）访问该文件,注意localhost:8001/swagger是访问不到的，去launchSettings.json把launchUrl去掉
                 //c.InjectJavascript("/js/zh_CN.js"); // 加载中文包
                 //c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShoppingMall V1");

@@ -21,13 +21,13 @@ namespace WebAPI.FilterClass
     {
         private readonly IHostingEnvironment _env;
         private readonly ILoggerHelper _loggerHelper;
-        private readonly IHubContext<ChatHub> _hubContext;
+        //private readonly IHubContext<ChatHub> _hubContext;
 
-        public GlobalExceptionsFilter(IHostingEnvironment env, ILoggerHelper loggerHelper, IHubContext<ChatHub> hubContext)
+        public GlobalExceptionsFilter(IHostingEnvironment env, ILoggerHelper loggerHelper)
         {
             _env = env;
             _loggerHelper = loggerHelper;
-            _hubContext = hubContext;
+            //_hubContext = hubContext;
         }
 
         public void OnException(ExceptionContext context)
@@ -47,7 +47,7 @@ namespace WebAPI.FilterClass
             //采用log4net 进行错误日志记录
             _loggerHelper.Error(json.Message, WriteLog(json.Message, context.Exception));
 
-            _hubContext.Clients.All.SendAsync("ReceiveUpdate", LogLock.GetLogData()).Wait();
+            //_hubContext.Clients.All.SendAsync("ReceiveUpdate", LogLock.GetLogData()).Wait();
 
         }
 

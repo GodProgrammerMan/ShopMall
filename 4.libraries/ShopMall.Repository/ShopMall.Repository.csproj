@@ -4,12 +4,17 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>D:\work\ShoppingMall\ShoppingMall\1.webview\WebAPI\bin\Debug\</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.0.165" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ShopMall.IRepository\ShopMall.IRepository.csproj" />
+    <ProjectReference Include="..\ShopMall.Model\ShopMall.Model.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,6 +6,10 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.webview", "1.webview", "{BAD0E90D-5664-4CD4-8DAF-1780DDA2DA19}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopWebPC", "1.webview\ShopWebPC\ShopWebPC.csproj", "{812B12BA-2BFA-4C8D-A219-7607154F6238}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EAD3DF98-A56F-4114-9AC5-3955E96EB7E0} = {EAD3DF98-A56F-4114-9AC5-3955E96EB7E0}
+		{98A81ECB-BE8D-4F3A-801C-6E93D5FDD368} = {98A81ECB-BE8D-4F3A-801C-6E93D5FDD368}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.PushPipe", "2.PushPipe", "{A2866CE8-F13F-48BF-B9EC-AF9F556BBE2C}"
 EndProject
@@ -23,17 +27,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.libraries", "4.libraries"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopMall.Common", "4.libraries\ShopMall.Common\ShopMall.Common.csproj", "{681656BA-0CFC-41AC-B218-42A54A39FD7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopMall.FrameWork", "4.libraries\ShopMall.FrameWork\ShopMall.FrameWork.csproj", "{E2E5A9C1-9879-4525-8BC0-BA52AE9DA198}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopMall.FrameWork", "4.libraries\ShopMall.FrameWork\ShopMall.FrameWork.csproj", "{E2E5A9C1-9879-4525-8BC0-BA52AE9DA198}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopMall.IRepository", "4.libraries\ShopMall.IRepository\ShopMall.IRepository.csproj", "{98A81ECB-BE8D-4F3A-801C-6E93D5FDD368}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopMall.IRepository", "4.libraries\ShopMall.IRepository\ShopMall.IRepository.csproj", "{98A81ECB-BE8D-4F3A-801C-6E93D5FDD368}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopMall.IServices", "4.libraries\ShopMall.IServices\ShopMall.IServices.csproj", "{EAD3DF98-A56F-4114-9AC5-3955E96EB7E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopMall.IServices", "4.libraries\ShopMall.IServices\ShopMall.IServices.csproj", "{EAD3DF98-A56F-4114-9AC5-3955E96EB7E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopMall.Model", "4.libraries\ShopMall.Model\ShopMall.Model.csproj", "{D26A1B50-8DF4-43B6-8A46-FE51487C426F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopMall.Model", "4.libraries\ShopMall.Model\ShopMall.Model.csproj", "{D26A1B50-8DF4-43B6-8A46-FE51487C426F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopMall.Repository", "4.libraries\ShopMall.Repository\ShopMall.Repository.csproj", "{D880445D-D5E0-42F5-9AD9-87A22DF04F82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopMall.Repository", "4.libraries\ShopMall.Repository\ShopMall.Repository.csproj", "{D880445D-D5E0-42F5-9AD9-87A22DF04F82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopMall.Services", "4.libraries\ShopMall.Services\ShopMall.Services.csproj", "{A7E47EBA-97AC-41DF-B565-E465988B8D2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopMall.Services", "4.libraries\ShopMall.Services\ShopMall.Services.csproj", "{A7E47EBA-97AC-41DF-B565-E465988B8D2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

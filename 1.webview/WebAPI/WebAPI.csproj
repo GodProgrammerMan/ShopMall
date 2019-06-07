@@ -2,13 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>D:\work\ShoppingMall\ShoppingMall\1.webview\WebAPI\WebAPI.xml</DocumentationFile>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <None Include="wwwroot\js\zh_CN.js" />
   </ItemGroup>
@@ -29,8 +28,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\4.libraries\ShopMall.Common\ShopMall.Common.csproj" />
-    <ProjectReference Include="..\..\4.libraries\ShopMall.Model\ShopMall.Model.csproj" />
+    <ProjectReference Include="..\..\4.libraries\ShopMall.IRepository\ShopMall.IRepository.csproj" />
+    <ProjectReference Include="..\..\4.libraries\ShopMall.IServices\ShopMall.IServices.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  
 </Project>
