@@ -28,8 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\4.libraries\ShopMall.IRepository\ShopMall.IRepository.csproj" />
-    <ProjectReference Include="..\..\4.libraries\ShopMall.IServices\ShopMall.IServices.csproj" />
+    <ProjectReference Include="..\..\4.libraries\ShopMall.Repository\ShopMall.Repository.csproj" />
+    <ProjectReference Include="..\..\4.libraries\ShopMall.Services\ShopMall.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
