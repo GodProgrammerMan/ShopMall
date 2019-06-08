@@ -11,7 +11,7 @@
         </member>
         <member name="T:WebAPI.AOP.ShopMallLogAOP">
             <summary>
-            拦截器BlogLogAOP 继承IInterceptor接口
+            拦截器ShopMallLogAOP 继承IInterceptor接口
             </summary>
         </member>
         <member name="M:WebAPI.AOP.ShopMallLogAOP.Intercept(Castle.DynamicProxy.IInvocation)">
@@ -34,6 +34,20 @@
             <summary>
             登录服务接口
             </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.LoginController.#ctor(ShopMall.IServices.IShop_sys_userServices,ShopMall.Common.IRedisCacheManager)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="userServices"></param>
+            <param name="redisCacheManager"></param>
+        </member>
+        <member name="M:WebAPI.Controllers.LoginController.ShopMallLogin(System.Int32)">
+            <summary>
+            shopmall商城登录接口,无需token
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
         </member>
         <member name="T:WebAPI.Controllers.ValuesController">
             <summary>

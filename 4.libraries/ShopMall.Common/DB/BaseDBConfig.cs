@@ -46,7 +46,7 @@ namespace ShopMall.Common
             }
             else
             {
-                return "server=.;uid=sa;pwd=sa;database=WMBlogDB";
+                return "server=134.175.52.40;uid=IM_lzx;pwd=*520lzx;database=ShopMall";
             }
 
         }

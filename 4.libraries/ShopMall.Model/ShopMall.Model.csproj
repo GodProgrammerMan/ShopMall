@@ -8,10 +8,6 @@
     <DocumentationFile>E:\ShopMall\4.libraries\ShopMall.Model\ShopMall.Model.xml</DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
-  
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="sqlSugarCore" Version="5.0.0.6" />

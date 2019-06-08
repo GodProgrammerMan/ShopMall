@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace WebAPI.AOP
 {
     /// <summary>
-    /// 拦截器BlogLogAOP 继承IInterceptor接口
+    /// 拦截器ShopMallLogAOP 继承IInterceptor接口
     /// </summary>
     public class ShopMallLogAOP : IInterceptor
     {

@@ -1,5 +1,4 @@
-﻿
-'use strict';
+﻿'use strict';
  
 window.SwaggerTranslator = {
     _words: [],
@@ -116,4 +115,6 @@ $(function () {
     debugger;
     window.SwaggerTranslator.translate();
     window.SwaggerTranslator.setControllerSummary();
+    $(".col col_header parameters-col_description").html("描述");
+    $("title").html("ShopMall商城接口")
 });

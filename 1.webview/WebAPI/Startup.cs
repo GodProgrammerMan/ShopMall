@@ -150,7 +150,6 @@ namespace WebAPI
 
   
             #region MVC + GlobalExceptions
-
             //注入全局异常捕获
             services.AddMvc(o =>
             {
@@ -189,7 +188,7 @@ namespace WebAPI
             //builder.RegisterType<AdvertisementServices>().As<IAdvertisementServices>();
             builder.RegisterType<ShopMallCacheAOP>();//可以直接替换其他拦截器
             builder.RegisterType<ShopMallRedisCacheAOP>();//可以直接替换其他拦截器
-            builder.RegisterType<ShopMallLogAOP>();//这样可以注入第二个
+            //builder.RegisterType<ShopMallLogAOP>();//这样可以注入第二个
 
             #region 带有接口层的服务注入
 
@@ -213,10 +212,10 @@ namespace WebAPI
                 {
                     cacheType.Add(typeof(ShopMallRedisCacheAOP));
                 }
-                if (Appsettings.app(new string[] { "AppSettings", "LogAOP", "Enabled" }).ObjToBool())
-                {
-                    cacheType.Add(typeof(ShopMallLogAOP));
-                }
+                //if (Appsettings.app(new string[] { "AppSettings", "LogAOP", "Enabled" }).ObjToBool())
+                //{
+                //    cacheType.Add(typeof(ShopMallLogAOP));
+                //}
 
                 builder.RegisterAssemblyTypes(assemblysServices)
                           .AsImplementedInterfaces()
@@ -305,7 +304,8 @@ namespace WebAPI
                 // 将swagger首页，设置成我们自定义的页面，记得这个字符串的写法：解决方案名.index.html
                // c.IndexStream = () => GetType().GetTypeInfo().Assembly.GetManifestResourceStream("ShoppingMall.index.html");//这里是配合MiniProfiler进行性能监控的，《文章：完美基于AOP的接口性能分析》，如果你不需要，可以暂时先注释掉，不影响大局。
                 c.RoutePrefix = ""; //路径配置，设置为空，表示直接在根域名（localhost:8001）访问该文件,注意localhost:8001/swagger是访问不到的，去launchSettings.json把launchUrl去掉
-                //c.InjectJavascript("/js/zh_CN.js"); // 加载中文包
+                c.InjectJavascript("/lib/jquery/dist/jquery.min.js"); // 
+                c.InjectJavascript("/js/zh_CN.js"); // 加载中文包
                 //c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShoppingMall V1");
             });
             #endregion
