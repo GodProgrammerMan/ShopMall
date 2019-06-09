@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShopMall.Common;
+using ShopMall.Common.Helper;
 using ShopMall.IServices;
 using ShopMall.Model;
 using ShopMall.Model.Models;
@@ -44,11 +45,22 @@ namespace WebAPI.Controllers
         {
             var model = new JsonResult<LoginUserDTO>();
             var user = await _userServices.QueryById(ID);
+            try
+            {
+                string parameters = @"{ ""username"": ""wjk"",""password"": ""123"",""grant_type"": ""password"",""client_id"": ""client2"",""client_secret"": ""secret""}";
+                var loginMsg = GetNetData.Post("http://lzxidentityserver.com/", parameters);
+                model.Result = "获取成功！";
+            }
+            catch (Exception e)
+            {
+                model.Result = "e:"+ e;
+            }
+
 
             return new BaseJsonResult().UnifiedFucn(() =>
             { 
                 model.Success = true;
-                model.Result = "获取成功！";
+
                 model.Content = null;
                 return model;
             });

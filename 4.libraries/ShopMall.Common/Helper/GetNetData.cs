@@ -26,14 +26,13 @@ namespace ShopMall.Common.Helper
             return retString;
         }
 
-        public static string Post(string serviceAddress)
+        public static string Post(string serviceAddress,string strContent)
         {
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(serviceAddress);
 
             request.Method = "POST";
             request.ContentType = "application/json";
-            string strContent = @"{ ""mmmm"": ""89e"",""nnnnnn"": ""0101943"",""kkkkkkk"": ""e8sodijf9""}";
             using (StreamWriter dataStream = new StreamWriter(request.GetRequestStream()))
             {
                 dataStream.Write(strContent);

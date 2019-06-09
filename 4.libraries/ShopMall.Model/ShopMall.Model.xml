@@ -1163,6 +1163,19 @@
             找不到指定资源
             </summary>
         </member>
+        <member name="T:ShopMall.Model.BaseJsonResult">
+            <summary>
+            基础类JSON返回序列化类
+            </summary>
+        </member>
+        <member name="M:ShopMall.Model.BaseJsonResult.UnifiedFucn``1(System.Func{ShopMall.Model.ViewModels.JsonResult{``0}})">
+            <summary>
+            统一的方法
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="func"></param>
+            <returns></returns>
+        </member>
         <member name="T:ShopMall.Model.TableModel`1">
             <summary>
             表格数据，支持分页
@@ -1186,6 +1199,75 @@
         <member name="P:ShopMall.Model.TableModel`1.Data">
             <summary>
             返回数据集
+            </summary>
+        </member>
+        <member name="T:ShopMall.Model.ViewModels.JsonResult`1">
+            <summary>
+            API返回信息
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:ShopMall.Model.ViewModels.JsonResult`1.Success">
+            <summary>
+            返回成功
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.ViewModels.JsonResult`1.ret">
+            <summary>
+            0正常返回  1参数错误   2鉴权失败   3内部错误  4其它错误  5没有记录  6分页数据没有记录了
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.ViewModels.JsonResult`1.Result">
+            <summary>
+             返回消息
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.ViewModels.JsonResult`1.Content">
+            <summary>
+            内容包
+            </summary>
+        </member>
+        <member name="M:ShopMall.Model.ViewModels.JsonResult`1.#ctor">
+            <summary>
+            JSONResult
+            </summary>
+        </member>
+        <member name="M:ShopMall.Model.ViewModels.JsonResult`1.#ctor(System.Boolean,System.Int32,System.String)">
+            <summary>
+            JSONResult
+            </summary>
+            <param name="Success">成功失败?</param>
+            <param name="ret">0正常返回  1参数错误   2鉴权失败   3内部错误  4其它错误  5没有记录  6分页数据没有记录了</param>
+            <param name="Result">返回结果描述</param>
+        </member>
+        <member name="T:ShopMall.Model.ViewModels.LoginUserDTO">
+            <summary>
+            登录返回实体
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.ViewModels.LoginUserDTO.uid">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.ViewModels.LoginUserDTO.headPortrait">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:ShopMall.Model.ViewModels.LoginUserDTO.mobile">
+             <summary>
+            手机号
+             </summary>
+        </member>
+        <member name="P:ShopMall.Model.ViewModels.LoginUserDTO.nickname">
+             <summary>
+            昵称
+             </summary>
+        </member>
+        <member name="P:ShopMall.Model.ViewModels.LoginUserDTO.token">
+            <summary>
+            令牌token
             </summary>
         </member>
     </members>
