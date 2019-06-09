@@ -48,7 +48,7 @@ namespace WebAPI.Controllers
             try
             {
                 string parameters = @"{ ""username"": ""wjk"",""password"": ""123"",""grant_type"": ""password"",""client_id"": ""client2"",""client_secret"": ""secret""}";
-                var loginMsg = GetNetData.Post("http://lzxidentityserver.com/", parameters);
+                var loginMsg = GetNetData.Post("http://shopmall.identityserver.com/connect/token", parameters);
                 model.Result = "获取成功！";
             }
             catch (Exception e)

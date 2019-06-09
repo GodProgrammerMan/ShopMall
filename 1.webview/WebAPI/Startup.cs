@@ -174,7 +174,7 @@ namespace WebAPI
             services.AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = "http://lzxidentityserver.com/";
+                    options.Authority = "http://shopmall.identityserver.com/";
                     options.RequireHttpsMetadata = false;
                     options.ApiName = "api1";
                 });
