@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.0.165" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ShopMall.IRepository\ShopMall.IRepository.csproj" />
     <ProjectReference Include="..\ShopMall.Model\ShopMall.Model.csproj" />
   </ItemGroup>

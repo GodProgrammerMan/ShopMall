@@ -1,12 +1,14 @@
 
-	//----------Shop_sys_user开始----------
-    
+//----------Shop_sys_user开始----------
+
 
 using System;
 using ShopMall.IServices;
 using ShopMall.IRepository;
 using ShopMall.Model.Models;
 using ShopMall.Services.BASE;
+using System.Threading.Tasks;
+
 namespace ShopMall.Services
 {	
 	/// <summary>
@@ -21,9 +23,19 @@ namespace ShopMall.Services
             this.dal = dal;
             base.baseDal = dal;
         }
-       
+
+        public async Task<Shop_sys_user> GetSysUserByLoginNameAsync(string loginName)
+        {
+            Shop_sys_user model = null;
+
+            if (!string.IsNullOrWhiteSpace(loginName))
+            {
+                model = await dal.GetSysUserByLoginName(loginName);
+            }
+
+            return model;
+        }
     }
 }
 
-	//----------Shop_sys_user结束----------
 	

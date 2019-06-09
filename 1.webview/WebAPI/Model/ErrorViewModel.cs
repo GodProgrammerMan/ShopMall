@@ -1,7 +1,10 @@
 using System;
 
-namespace ShopMall.IdentityServer.Models
+namespace WebAPI.Model
 {
+    /// <summary>
+    /// ´íÎó
+    /// </summary>
     public class ErrorViewModel
     {
         /// <summary>

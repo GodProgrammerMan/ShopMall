@@ -2,15 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.AspNetCore.SignalR;
-using ShopMall.Common.Hubs;
 using ShopMall.Common.Log;
-using ShopMall.Common.LogHelper;
-using StackExchange.Profiling;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ShopMall.IdentityServer.FilterHelper
 {
@@ -39,7 +32,7 @@ namespace ShopMall.IdentityServer.FilterHelper
             }
             context.Result = new InternalServerErrorObjectResult(json);
 
-            MiniProfiler.Current.CustomTiming("Errors：", json.Message);
+            //MiniProfiler.Current.CustomTiming("Errors：", json.Message);
 
 
             //采用log4net 进行错误日志记录

@@ -2,7 +2,9 @@
 using IdentityServer4.Models;
 using IdentityServer4.Validation;
 using ShopMall.Common;
+using ShopMall.Common.Helper;
 using ShopMall.IServices;
+using ShopMall.Model.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,7 @@ namespace ShopMall.IdentityServer.IdsConfig
     {
         readonly IShop_sys_userServices _userServices;
         readonly IRedisCacheManager _redisCacheManager;
+
         public ResourceOwnerPasswordValidator(IShop_sys_userServices userServices, IRedisCacheManager redisCacheManager)
         {
             _userServices = userServices;
@@ -23,33 +26,61 @@ namespace ShopMall.IdentityServer.IdsConfig
 
         public async Task ValidateAsync(ResourceOwnerPasswordValidationContext context)
         {
-            //根据context.UserName和context.Password与数据库的数据做校验，判断是否合法
-            if (context.UserName=="wjk"&&context.Password=="123")
+            Shop_sys_user user = new Shop_sys_user();
+            //获取用户
+            try
             {
-                context.Result = new GrantValidationResult(
-                 subject: context.UserName,
-                 authenticationMethod: "custom",
-                 claims: GetUserClaims());
+                if (_redisCacheManager.Get<object>("Redis.sysuser") != null)
+                {
+                    user = _redisCacheManager.Get<Shop_sys_user>("Redis.sysuser");
+                }
+                else
+                {
+                    user = await _userServices.GetSysUserByLoginNameAsync(context.UserName);
+                    _redisCacheManager.Set("Redis.sysuser", user, TimeSpan.FromHours(10));
+                }
+
+            }
+            catch (Exception e)
+            {
+                _redisCacheManager.Set("Redis.sysuser", user, TimeSpan.FromHours(10));
+            }
+            if (user != null)
+            {
+                if (user.uStatus == 0) {
+                    context.Result = new GrantValidationResult(TokenRequestErrors.InvalidClient, "密码不正确！");
+                    return;
+                }
+                var _pass = context.Password + user.passkey;
+                var _md5passkey = MD5Helper.MD5Encrypt32(_pass);
+                if (_md5passkey.Equals(user.passValue))
+                {
+                    context.Result = new GrantValidationResult(
+                     subject: context.UserName,
+                     authenticationMethod: "custom",
+                     claims: new Claim[]
+                        {
+                            new Claim("uid", user.uid+""),
+                            new Claim(JwtClaimTypes.Name,user.loginName),
+                            new Claim(JwtClaimTypes.GivenName, user.realName),
+                            new Claim(JwtClaimTypes.FamilyName, user.nickName),
+                            new Claim(JwtClaimTypes.Email, string.IsNullOrWhiteSpace(user.Email)?"":user.Email ),
+                            new Claim(JwtClaimTypes.Role,"user")
+                        });
+                    return;
+                }
+                else
+                {
+                    context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "密码不正确！");
+                    return;
+                }
             }
             else
             {
-                
-                 //验证失败
-                 context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "invalid custom credential");
+                //验证失败
+                context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "不存在该用户名！");
+                return;
             }
-        }
-        //可以根据需要设置相应的Claim
-        private Claim[] GetUserClaims()
-        {
-            return new Claim[]
-            {
-            new Claim("UserId", 1.ToString()),
-            new Claim(JwtClaimTypes.Name,"wjk"),
-            new Claim(JwtClaimTypes.GivenName, "jaycewu"),
-            new Claim(JwtClaimTypes.FamilyName, "yyy"),
-            new Claim(JwtClaimTypes.Email, "977865769@qq.com"),
-            new Claim(JwtClaimTypes.Role,"admin")
-            };
         }
     }
 }

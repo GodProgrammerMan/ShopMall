@@ -5,15 +5,16 @@
 using System;
 using ShopMall.Model.Models;
 using ShopMall.IRepository.BASE;
-namespace ShopMall.IRepository
-{	
-	/// <summary>
-	/// IShop_sys_userRepository
-	/// </summary>	
-	public interface IShop_sys_userRepository : IBaseRepository<Shop_sys_user>//类名
-    {
+using System.Threading.Tasks;
 
-       
+namespace ShopMall.IRepository
+{
+    /// <summary>
+    /// IShop_sys_userRepository
+    /// </summary>	
+    public interface IShop_sys_userRepository : IBaseRepository<Shop_sys_user>//类名
+    {
+         Task<Shop_sys_user> GetSysUserByLoginName(string loginName);
     }
 }
 

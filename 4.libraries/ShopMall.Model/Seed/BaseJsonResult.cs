@@ -20,7 +20,7 @@ namespace ShopMall.Model
             try
             {
                 var RetFunc = func();
-                return RetFunc;
+                return  RetFunc;
             }
             catch (Exception ex)
             {

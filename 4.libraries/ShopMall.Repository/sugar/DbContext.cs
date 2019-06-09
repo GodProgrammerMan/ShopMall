@@ -1,7 +1,6 @@
 ﻿using ShopMall.Common.Log;
 using ShopMall.Common.LogHelper;
 using SqlSugar;
-using StackExchange.Profiling;
 using System;
 using System.Threading.Tasks;
 
@@ -92,7 +91,7 @@ namespace ShopMall.Repository
             {
                 Parallel.For(0, 1, e =>
                 {
-                    MiniProfiler.Current.CustomTiming("SQL：", GetParas(pars) + "【SQL语句】：" + sql);
+                    //MiniProfiler.Current.CustomTiming("SQL：", GetParas(pars) + "【SQL语句】：" + sql);
                     LogLock.OutSql2Log("SqlLog", new string[] { GetParas(pars), "【SQL语句】：" + sql });
 
                 });

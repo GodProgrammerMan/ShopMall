@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShopMall.Common;
@@ -10,6 +11,7 @@ using ShopMall.IServices;
 using ShopMall.Model;
 using ShopMall.Model.Models;
 using ShopMall.Model.ViewModels;
+using WebAPI.Model;
 
 namespace WebAPI.Controllers
 {
@@ -37,31 +39,57 @@ namespace WebAPI.Controllers
         /// <summary>
         /// shopmall商城登录接口,无需token
         /// </summary>
-        /// <param name="ID"></param>
+        /// <param name="obj"></param>
         /// <returns></returns>
         [Route("loginshop")]
         [HttpPost]
-        public async Task<JsonResult<LoginUserDTO>> ShopMallLogin([FromBody] int ID)
+        [AllowAnonymous]
+        public async Task<JsonResult<LoginUserDTO>> ShopMallLogin([FromBody] LoginParameterModel obj)
         {
-            var model = new JsonResult<LoginUserDTO>();
-            var user = await _userServices.QueryById(ID);
-            try
+            var model = new JsonResult<LoginUserDTO>
             {
-                string parameters = @"{ ""username"": ""wjk"",""password"": ""123"",""grant_type"": ""password"",""client_id"": ""client2"",""client_secret"": ""secret""}";
-                var loginMsg = GetNetData.Post("http://shopmall.identityserver.com/connect/token", parameters);
-                model.Result = "获取成功！";
-            }
-            catch (Exception e)
+                ret = 0,
+                Success = true
+            };
+            #region 参数检验
+            if (string.IsNullOrWhiteSpace(obj.LoginName) || string.IsNullOrWhiteSpace(obj.Password))
             {
-                model.Result = "e:"+ e;
+
             }
+            #endregion
+            var user = await _userServices.GetSysUserByLoginNameAsync(obj.LoginName);
+            return new BaseJsonResult().UnifiedFucn(()=>
+            {
+                try
+                {
+                    #region 请求IdentityServer4，校验用户名密码
+                    IDictionary<string, string> parameters = new Dictionary<string, string>();
+                    parameters.Add("username", "wjk");
+                    parameters.Add("password", "123");
+                    parameters.Add("grant_type", "password");
+                    parameters.Add("client_id", "client2");
+                    parameters.Add("client_secret", "secret");
+                    var loginMsg = GetNetData.DoPost("http://shopmall.identityserver.com/connect/token", parameters, "UTF-8");
+                    #endregion
+                    if (loginMsg.IndexOf("error_description") > -1)
+                    {
+                        var error = JsonHelper.ParseFormByJson<ErrorViewModel>(loginMsg);
+                        model.ret = 1;
+                        model.Result = error.error_description;
+                    }
+                    else
+                    {
+                        var result = JsonHelper.ParseFormByJson<ResultViewModel>(loginMsg);
+                        model.ret = 0;
+                        model.Result = "登录成功！";
+                    }
 
-
-            return new BaseJsonResult().UnifiedFucn(() =>
-            { 
-                model.Success = true;
-
-                model.Content = null;
+                }
+                catch (Exception e)
+                {
+                    model.ret = 3;
+                    model.Result = "e:" + e;
+                }
                 return model;
             });
         }

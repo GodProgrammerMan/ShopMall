@@ -55,15 +55,15 @@ namespace ShopMall.Common.Helper
 
         }
 
-        private int _timeout = 100000;
+        private static int _timeout = 100000;
 
         /// <summary>
         /// 请求与响应的超时时间
         /// </summary>
         public int Timeout
         {
-            get { return this._timeout; }
-            set { this._timeout = value; }
+            get { return _timeout; }
+            set { _timeout = value; }
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace ShopMall.Common.Helper
         /// <param name="parameters">请求参数</param>
         /// <param name="charset">编码字符集</param>
         /// <returns>HTTP响应</returns>
-        public string DoPost(string url, IDictionary<string, string> parameters, string charset)
+        public static string DoPost(string url, IDictionary<string, string> parameters, string charset)
         {
             HttpWebRequest req = GetWebRequest(url, "POST");
             req.ContentType = "application/x-www-form-urlencoded;charset=" + charset;
@@ -82,9 +82,16 @@ namespace ShopMall.Common.Helper
             Stream reqStream = req.GetRequestStream();
             reqStream.Write(postData, 0, postData.Length);
             reqStream.Close();
-
-            HttpWebResponse rsp = (HttpWebResponse)req.GetResponse();
-            Encoding encoding = Encoding.GetEncoding(rsp.CharacterSet);
+            HttpWebResponse rsp = null;
+            try
+            {
+                rsp = (HttpWebResponse)req.GetResponse();
+            }
+            catch (WebException ex)
+            {
+                rsp = (HttpWebResponse)ex.Response;
+            }
+            Encoding encoding = encoding = Encoding.GetEncoding(rsp.CharacterSet);
             return GetResponseAsString(rsp, encoding);
         }
 
@@ -132,14 +139,14 @@ namespace ShopMall.Common.Helper
             return GetResponseAsString(rsp, encoding);
         }
 
-        public HttpWebRequest GetWebRequest(string url, string method)
+        public static HttpWebRequest GetWebRequest(string url, string method)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
             req.ServicePoint.Expect100Continue = false;
             req.Method = method;
             req.KeepAlive = true;
             req.UserAgent = "Aop4Net";
-            req.Timeout = this._timeout;
+            req.Timeout = _timeout;
             return req;
         }
 
@@ -149,7 +156,7 @@ namespace ShopMall.Common.Helper
         /// <param name="rsp">响应流对象</param>
         /// <param name="encoding">编码方式</param>
         /// <returns>响应文本</returns>
-        public string GetResponseAsString(HttpWebResponse rsp, Encoding encoding)
+        public static string GetResponseAsString(HttpWebResponse rsp, Encoding encoding)
         {
             StringBuilder result = new StringBuilder();
             Stream stream = null;
