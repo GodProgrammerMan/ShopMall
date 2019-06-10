@@ -39,7 +39,15 @@ namespace ShopMall.Repository.BASE
             _entityDb = _context.GetEntityDB<TEntity>(_db);
         }
 
-
+        /// <summary>
+        /// 是否存在一条记录
+        /// </summary>
+        /// <param name="objId"></param>
+        /// <returns></returns>
+        public async Task<bool> IsAny(Expression<Func<TEntity, bool>> whereExpression)
+        {
+            return await _db.Queryable<TEntity>().WhereIF(whereExpression!=null, whereExpression).AnyAsync();
+        }
 
         public async Task<TEntity> QueryById(object objId)
         {
@@ -390,6 +398,7 @@ namespace ShopMall.Repository.BASE
             int pageCount = (Math.Ceiling(totalCount.ObjToDecimal() / intPageSize.ObjToDecimal())).ObjToInt();
             return new PageModel<TEntity>() { dataCount = totalCount, pageCount = pageCount, page = intPageIndex, PageSize = intPageSize, data = list };
         }
+
 
     }
 }

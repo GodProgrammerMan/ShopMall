@@ -11,6 +11,9 @@ namespace ShopMall.IServices.BASE
     {
 
         Task<TEntity> QueryById(object objId);
+
+        Task<bool> IsAny(Expression<Func<TEntity, bool>> whereExpression);
+
         Task<TEntity> QueryById(object objId, bool blnUseCache = false);
         Task<List<TEntity>> QueryByIDs(object[] lstIds);
 

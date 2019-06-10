@@ -16,7 +16,7 @@
 <#@ include file="$(ProjectDir)ModelAuto.ttinclude"	#>
 
 
-<# 
+<#  
     var OutputPath1 = Path.GetDirectoryName(Host.TemplateFile)+"\\work";
 	if (!Directory.Exists(OutputPath1))
 	{

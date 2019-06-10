@@ -14,7 +14,7 @@
 <#@ import namespace="System.Xml" #>
 <#@ import namespace="System.Linq" #> 
 <#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="System.IO" #>
+<#@ import namespace="System.IO" #> 
 
 //引入我们的公共模板文件
 <#@ include file="$(ProjectDir)DbHelper.ttinclude"  #>

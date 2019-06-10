@@ -15,6 +15,16 @@ namespace ShopMall.Services.BASE
         //public IBaseRepository<TEntity> baseDal = new BaseRepository<TEntity>();
         public IBaseRepository<TEntity> baseDal;//通过在子类的构造函数中注入，这里是基类，不用构造函数
 
+        /// <summary>
+        /// 是否存在
+        /// </summary>
+        /// <param name="objId"></param>
+        /// <returns></returns>
+        public async Task<bool> IsAny(Expression<Func<TEntity, bool>> whereExpression)
+        {
+            return await baseDal.IsAny(whereExpression);
+        }
+
         public async Task<TEntity> QueryById(object objId)
         {
             return await baseDal.QueryById(objId);
@@ -250,6 +260,7 @@ namespace ShopMall.Services.BASE
             return await baseDal.QueryPage(whereExpression,
          intPageIndex, intPageSize, strOrderByFileds);
         }
+
 
     }
 

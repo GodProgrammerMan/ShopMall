@@ -48,10 +48,10 @@ namespace ShopMall.IdentityServer.IdsConfig
             if (user != null)
             {
                 if (user.uStatus == 0) {
-                    context.Result = new GrantValidationResult(TokenRequestErrors.InvalidClient, "密码不正确！");
+                    context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "您已被禁止登陆，请与工作人员联系！");
                     return;
                 }
-                var _pass = context.Password + user.passkey;
+                var _pass = $"{context.Password}{user.passkey}";
                 var _md5passkey = MD5Helper.MD5Encrypt32(_pass);
                 if (_md5passkey.Equals(user.passValue))
                 {

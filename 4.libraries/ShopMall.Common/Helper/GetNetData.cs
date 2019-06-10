@@ -90,6 +90,9 @@ namespace ShopMall.Common.Helper
             catch (WebException ex)
             {
                 rsp = (HttpWebResponse)ex.Response;
+                if (rsp.CharacterSet == null) {
+                    return @"{""error"":""信息错误"",""error_description"":""登录名和密码不一致，请重新登录！""}";
+                }
             }
             Encoding encoding = encoding = Encoding.GetEncoding(rsp.CharacterSet);
             return GetResponseAsString(rsp, encoding);

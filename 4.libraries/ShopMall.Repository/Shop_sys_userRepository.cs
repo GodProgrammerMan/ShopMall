@@ -18,6 +18,7 @@ namespace ShopMall.Repository
         {
             return await Task.Run(() => Db.Queryable<Shop_sys_user>().WhereIF(!string.IsNullOrWhiteSpace(loginName),t=>t.loginName == loginName).First());
         }
+
     }
 }
 

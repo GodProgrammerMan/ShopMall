@@ -23,4 +23,29 @@ namespace WebAPI.Model
         /// </summary>
         public string Source { get; set; }
     }
+    /// <summary>
+    /// 注册
+    /// </summary>
+    public class RegisterParameterModel {
+        /// <summary>
+        /// 注册、一般是邮箱、手机号码
+        /// </summary>
+        public string loginName { get; set; }
+        /// <summary>
+        /// 手机号
+        /// </summary>
+        public string mobilePhone { get; set; }
+        /// <summary>
+        /// 密码
+        /// </summary>
+        public string passWord { get; set; }
+        /// <summary>
+        /// 重复密码
+        /// </summary>
+        public string repass { get; set; }
+        /// <summary>
+        /// 来源
+        /// </summary>
+        public string source { get; set; }
+    }
 }
