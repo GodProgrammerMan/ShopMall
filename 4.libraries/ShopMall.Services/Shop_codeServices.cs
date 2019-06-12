@@ -29,9 +29,9 @@ namespace ShopMall.Services
             return await dal.QueryByLately(whereExpression);
         }
 
-        public async Task<bool> updateCodeStatus(string code)
+        public async Task<bool> updateCodeStatus(string code,string Toname)
         {
-            return await dal.updateCodeStatus(code);
+            return await dal.updateCodeStatus(code, Toname);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace ShopMall.IRepository
     /// </summary>	
     public interface IShop_codeRepository : IBaseRepository<Shop_code>//类名
     {
-        Task<bool> updateCodeStatus(string code);
+        Task<bool> updateCodeStatus(string code,string Toname);
         Task<Shop_code> QueryByLately(Expression<Func<Shop_code, bool>> whereExpression);
     }
 }

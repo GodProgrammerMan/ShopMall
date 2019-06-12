@@ -17,7 +17,7 @@ namespace ShopMall.FrameWork.Repository
     {
         public async Task UpdateUserLoginAsync(int uid)
         {
-            await Task.Run(() => Db.Updateable<Shop_sys_user>().WhereColumns(it => new Shop_sys_user() { LoginNum =+ 1, LastLogin = DateTime.Now })
+            await Task.Run(() => Db.Updateable<Shop_sys_user>().SetColumns(it => new Shop_sys_user() { LoginNum =+ 1, LastLogin = DateTime.Now })
            .Where(it => it.uid == uid).ExecuteCommand());
         }
     }

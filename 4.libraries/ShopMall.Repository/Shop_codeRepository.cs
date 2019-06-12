@@ -20,10 +20,10 @@ namespace ShopMall.Repository
             return await Task.Run(() => Db.Queryable<Shop_code>().Where(whereExpression).OrderBy(t=>t.creatTime,SqlSugar.OrderByType.Desc).FirstAsync());
         }
 
-        public async Task<bool> updateCodeStatus(string code)
+        public async Task<bool> updateCodeStatus(string code,string Toname)
         {
-            return await Task.Run(() => Db.Updateable<Shop_code>().WhereColumns(it => new Shop_code() { state = 1 })
-         .Where(it => it.code == code).ExecuteCommand()) > 1;
+            return await Task.Run(() => Db.Updateable<Shop_code>().SetColumns(it => new Shop_code() { state = 1 })
+         .Where(it => it.code == code && it.toName ==Toname).ExecuteCommand()) > 1;
         }
     }
 }

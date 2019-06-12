@@ -14,7 +14,7 @@ namespace ShopMall.IServices
     /// </summary>	
     public interface IShop_codeServices : IBaseServices<Shop_code>
     {
-        Task<bool> updateCodeStatus(string code);
+        Task<bool> updateCodeStatus(string code,string Toname);
         Task<Shop_code> QueryByLately(Expression<Func<Shop_code, bool>> whereExpression);
     }
 }

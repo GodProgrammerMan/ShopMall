@@ -160,7 +160,7 @@ namespace WebAPI.Controllers
                 result.Content = false;
                 return result;
             } 
-            var codeAny = await _CodeServices.QueryByLately(t => t.code == obj.code && t.codeType == 1 && t.state == 0 && (t.creatTime.AddMinutes(t.effectMinutes) > DateTime.Now));
+            var codeAny = await _CodeServices.QueryByLately(t => t.code == obj.code && t.codeType == 1 && t.state == 0);
             if (codeAny == null || !Utils.CompanyDate(codeAny.creatTime.AddMinutes(codeAny.effectMinutes),DateTime.Now).Equals(">")) {
                 result.ret = 1;
                 result.Result = "验证码不存在或已失效！";
@@ -195,7 +195,7 @@ namespace WebAPI.Controllers
             {
                 //插入
                 await _User_LogServices.AddUserLogAsync(uid,2,$"{obj.loginName}注册用户",obj.source,true);
-                await _CodeServices.updateCodeStatus(obj.code);
+                await _CodeServices.updateCodeStatus(obj.code, codeAny.toName);
                 result.ret = 0;
                 result.Result = "注册成功！";
                 result.Content = true;
