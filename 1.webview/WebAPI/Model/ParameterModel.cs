@@ -47,5 +47,18 @@ namespace WebAPI.Model
         /// 来源
         /// </summary>
         public string source { get; set; }
+        /// <summary>
+        /// 邮箱验证码
+        /// </summary>
+        public string code { get; set; }
+    }
+    /// <summary>
+    /// 单个实体
+    /// </summary>
+    public class StrParameterModel{
+        /// <summary>
+        /// 字符
+        /// </summary>
+        public string keyStr { get; set; }
     }
 }

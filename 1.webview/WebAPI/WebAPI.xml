@@ -35,18 +35,33 @@
             登录服务接口
             </summary>
         </member>
-        <member name="M:WebAPI.Controllers.LoginController.#ctor(ShopMall.IServices.IShop_sys_userServices,ShopMall.Common.IRedisCacheManager)">
+        <member name="M:WebAPI.Controllers.LoginController.#ctor(ShopMall.IServices.IShop_sys_userServices,ShopMall.Common.IRedisCacheManager,ShopMall.IServices.IShop_user_logServices,ShopMall.IServices.IShop_codeServices)">
             <summary>
             构造函数
             </summary>
             <param name="userServices"></param>
             <param name="redisCacheManager"></param>
+            <param name="user_LogServices"></param>
         </member>
-        <member name="M:WebAPI.Controllers.LoginController.ShopMallLogin(System.Int32)">
+        <member name="M:WebAPI.Controllers.LoginController.ShopMallLogin(WebAPI.Model.LoginParameterModel)">
             <summary>
             shopmall商城登录接口,无需token
             </summary>
-            <param name="ID"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.LoginController.RegisterShopMall(WebAPI.Model.RegisterParameterModel)">
+            <summary>
+            注册ShopMall
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.LoginController.SendEmailShopMall(WebAPI.Model.StrParameterModel)">
+            <summary>
+            邮箱验证
+            </summary>
+            <param name="obj">邮箱</param>
             <returns></returns>
         </member>
         <member name="T:WebAPI.Controllers.ValuesController">
@@ -138,6 +153,106 @@
             
             </summary>
             <param name="next"></param>
+        </member>
+        <member name="T:WebAPI.Model.ErrorViewModel">
+            <summary>
+            错误
+            </summary>
+        </member>
+        <member name="P:WebAPI.Model.ErrorViewModel.error">
+            <summary>
+            错误
+            </summary>
+        </member>
+        <member name="P:WebAPI.Model.ErrorViewModel.error_description">
+            <summary>
+            错误描述
+            </summary>
+        </member>
+        <member name="T:WebAPI.Model.LoginParameterModel">
+            <summary>
+            登录参数
+            </summary>
+        </member>
+        <member name="P:WebAPI.Model.LoginParameterModel.LoginName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:WebAPI.Model.LoginParameterModel.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:WebAPI.Model.LoginParameterModel.Source">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="T:WebAPI.Model.RegisterParameterModel">
+            <summary>
+            注册
+            </summary>
+        </member>
+        <member name="P:WebAPI.Model.RegisterParameterModel.loginName">
+            <summary>
+            注册、一般是邮箱、手机号码
+            </summary>
+        </member>
+        <member name="P:WebAPI.Model.RegisterParameterModel.mobilePhone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:WebAPI.Model.RegisterParameterModel.passWord">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:WebAPI.Model.RegisterParameterModel.repass">
+            <summary>
+            重复密码
+            </summary>
+        </member>
+        <member name="P:WebAPI.Model.RegisterParameterModel.source">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="P:WebAPI.Model.RegisterParameterModel.code">
+            <summary>
+            邮箱验证码
+            </summary>
+        </member>
+        <member name="T:WebAPI.Model.StrParameterModel">
+            <summary>
+            单个实体
+            </summary>
+        </member>
+        <member name="P:WebAPI.Model.StrParameterModel.keyStr">
+            <summary>
+            字符
+            </summary>
+        </member>
+        <member name="T:WebAPI.Model.ResultViewModel">
+            <summary>
+            返回实体
+            </summary>
+        </member>
+        <member name="P:WebAPI.Model.ResultViewModel.Token">
+            <summary>
+            返回token
+            </summary>
+        </member>
+        <member name="P:WebAPI.Model.ResultViewModel.TokenType">
+            <summary>
+            返回token类型
+            </summary>
+        </member>
+        <member name="P:WebAPI.Model.ResultViewModel.TokenTime">
+            <summary>
+            有效时间
+            </summary>
         </member>
         <member name="T:WebAPI.Startup">
             <summary>

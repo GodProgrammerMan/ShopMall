@@ -16,20 +16,21 @@ namespace ShopMall.FrameWork.Services
     {
 	
         IShop_user_logRepository dal;
+        
         public Shop_user_logServices(IShop_user_logRepository dal)
         {
             this.dal = dal;
             base.baseDal = dal;
         }
 
-        public async void LoginSuccessServiceAsync(int uid, int logtype, string bcontent, string source)
+        public async Task<bool> LoginSuccessServiceAsync(int uid, int logtype, string bcontent, string source)
         {
             //修改登录时间，和次数
             await dal.UpdateUserLoginAsync(uid);
             //添加登录记录
-            await AddUserLogAsync(uid, logtype, bcontent, source);
+            return await AddUserLogAsync(uid, logtype, bcontent, source) > 1;
         }
-        public async Task<int> AddUserLogAsync(int uid, int logtype, string bcontent, string source) {
+        public async Task<int> AddUserLogAsync(int uid, int logtype, string bcontent, string source,bool iscode=false) {
             Shop_user_log _userlog = new Shop_user_log()
             {
                 bcontent = bcontent,

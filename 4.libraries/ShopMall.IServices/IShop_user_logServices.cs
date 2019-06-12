@@ -12,8 +12,8 @@ namespace ShopMall.IServices
     /// </summary>	
     public interface IShop_user_logServices : IBaseServices<Shop_user_log>
     {
-        void LoginSuccessServiceAsync(int uid, int logtype, string bcontent, string source);
-        Task<int> AddUserLogAsync(int uid, int logtype, string bcontent, string source);
+        Task<bool> LoginSuccessServiceAsync(int uid, int logtype, string bcontent, string source);
+        Task<int> AddUserLogAsync(int uid, int logtype, string bcontent, string source,bool isCode=false);
     }
 }
 
