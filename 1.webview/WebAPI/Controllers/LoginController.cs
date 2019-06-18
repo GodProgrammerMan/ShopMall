@@ -223,7 +223,7 @@ namespace WebAPI.Controllers
             var result = new JsonResult<bool>() 
             {
                 ret = 0,
-                Success = true
+                Success = true   
             };
 
             #region 参数校验
@@ -274,5 +274,5 @@ namespace WebAPI.Controllers
             return result;
         }
         #endregion
-    }
+    } 
 }
