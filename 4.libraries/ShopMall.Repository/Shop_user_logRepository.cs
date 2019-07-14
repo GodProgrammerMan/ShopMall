@@ -1,7 +1,3 @@
-
-	//----------Shop_user_log开始----------
-    
-
 using System;
 using System.Threading.Tasks;
 using ShopMall.IRepository;
@@ -22,6 +18,3 @@ namespace ShopMall.FrameWork.Repository
         }
     }
 }
-
-	//----------Shop_user_log结束----------
-	

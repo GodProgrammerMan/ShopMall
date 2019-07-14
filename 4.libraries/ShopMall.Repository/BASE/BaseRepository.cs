@@ -399,6 +399,9 @@ namespace ShopMall.Repository.BASE
             return new PageModel<TEntity>() { dataCount = totalCount, pageCount = pageCount, page = intPageIndex, PageSize = intPageSize, data = list };
         }
 
-
+        public async Task<List<TEntity>> SqlQuery(string sql, object parameter)
+        {
+            return await _db.Ado.SqlQueryAsync<TEntity>(sql, parameter);
+        }
     }
 }

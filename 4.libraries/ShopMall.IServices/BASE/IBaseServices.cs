@@ -46,5 +46,8 @@ namespace ShopMall.IServices.BASE
 
 
         Task<PageModel<TEntity>> QueryPage(Expression<Func<TEntity, bool>> whereExpression, int intPageIndex = 1, int intPageSize = 20, string strOrderByFileds = null);
+
+        Task<List<TEntity>> QueryBySQL(string sql, object parameter);        
+
     }
 }

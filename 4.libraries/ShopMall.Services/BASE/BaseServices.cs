@@ -261,7 +261,16 @@ namespace ShopMall.Services.BASE
          intPageIndex, intPageSize, strOrderByFileds);
         }
 
-
+        /// <summary>
+        /// 按照sql语句查询数据返回
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
+        public async Task<List<TEntity>> QueryBySQL(string sql, object parameter)
+        {
+            return await baseDal.SqlQuery(sql, parameter);
+        }
     }
 
 }
