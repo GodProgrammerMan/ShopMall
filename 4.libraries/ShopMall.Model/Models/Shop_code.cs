@@ -42,7 +42,7 @@ namespace ShopMall.Model.Models
       /// </summary>	
 	  public int  effectMinutes { get; set; }
 	  /// <summary>
-	  /// 状态，1-已使用0-未使用11
+	  /// 状态，1-已使用0-未使用11  
       /// </summary>	
 	  public int  state { get; set; }        
  
