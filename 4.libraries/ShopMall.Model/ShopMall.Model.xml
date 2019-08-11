@@ -224,6 +224,56 @@
             
             </summary>	
         </member>
+        <member name="T:ShopMall.Model.Models.Shop_code">
+            <summary>
+            Shop_code
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_code.id">
+            <summary>
+            
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_code.codeType">
+            <summary>
+            验证码类型（1-邮箱验证，2-手机验证）
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_code.code">
+            <summary>
+            验证码
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_code.sendContent">
+            <summary>
+            发送内容
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_code.toName">
+            <summary>
+            账号
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_code.uid">
+            <summary>
+            uid(如未登录则为0)
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_code.creatTime">
+            <summary>
+            创建时间
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_code.effectMinutes">
+            <summary>
+            有效时间（当前时间与创建时间相加值）
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_code.state">
+            <summary>
+            状态，1-已使用0-未使用
+            </summary>	
+        </member>
         <member name="T:ShopMall.Model.Models.Shop_collection">
             <summary>
             Shop_collection
@@ -922,6 +972,41 @@
         <member name="P:ShopMall.Model.Models.Shop_transaction.creatTime">
             <summary>
             注册时间
+            </summary>	
+        </member>
+        <member name="T:ShopMall.Model.Models.Shop_user_log">
+            <summary>
+            Shop_user_log
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_user_log.id">
+            <summary>
+            表ID
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_user_log.logType">
+            <summary>
+            记录类型(1-登录，2-注册)
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_user_log.CreateTime">
+            <summary>
+            创建时间
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_user_log.bcontent">
+            <summary>
+            描述
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_user_log.source">
+            <summary>
+            来源
+            </summary>	
+        </member>
+        <member name="P:ShopMall.Model.Models.Shop_user_log.uid">
+            <summary>
+            用户ID
             </summary>	
         </member>
         <member name="T:ShopMall.Model.Models.Shop_user_shop">
