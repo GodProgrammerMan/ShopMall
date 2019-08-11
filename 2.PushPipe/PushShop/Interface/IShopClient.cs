@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace PushShop.Interface
 {
     public interface IShopClient
-{
-    Task SayHello(HubMessageModel model);
-}
+    {
+        Task SayHello(HubMessageModel model);
+        Task SetPosition(PositionMolde model);
+    }
 }

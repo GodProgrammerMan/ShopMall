@@ -17,6 +17,14 @@ namespace PushShop.HubClass
             });
         }
 
+        public Task GetPosition(string longitude, string latitude) {
+            return Clients.All.SetPosition(new PositionMolde()
+            {
+                longitude = longitude,
+                latitude = latitude
+            });
+        }
+
         //已连接
         public override Task OnConnectedAsync()
         {
