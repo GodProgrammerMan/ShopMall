@@ -41,7 +41,7 @@ namespace WebAPI
     public class Startup
     {
         /// <summary>
-        /// 跨域自定义名
+        /// 跨域自定义名11
         /// </summary>
         public const string CorsName = "WebApiCors";
         /// <summary>
